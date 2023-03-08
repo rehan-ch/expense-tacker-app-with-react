@@ -1,0 +1,47 @@
+.App {
+  width: 600px;
+  min-height: 80vh;
+  background-color: lightgrey;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.text-center{
+  text-align: center;
+}
+.border-around{
+  border: 1px;
+  border-radius: 20px;
+}
+.p-20{
+  padding: 20px;
+}
+.px-20{
+  padding: 0 20px;
+}
+.m-10{
+  margin: 10px;
+}
+.header-section{
+  padding: 5px;
+}
+.income-expense-section{
+  display: flex;
+  justify-content: space-around;
+  background-color: #ffffff;
+}
+.transaction{
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  width: 100%;
+}
+.transaction-container{
+  display: flex;
+}
+.remove-btn-container{
+  margin-top: 30px;
+}
+.remove-btn{
+  text-decoration: none;
+  color: red;
+}

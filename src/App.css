@@ -3,7 +3,8 @@
   min-height: 80vh;
   background-color: lightgrey;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .text-center{
   text-align: center;
@@ -44,4 +45,16 @@
 .remove-btn{
   text-decoration: none;
   color: red;
+}
+.form-input{
+  width: 90%;
+  height: 40px;
+  margin: 10px 0px;
+}
+.form-submit{
+  margin: 0 auto;
+}
+.form-submit-btn{
+  padding: 10px 20px;
+  background-color: lightblue;
 }

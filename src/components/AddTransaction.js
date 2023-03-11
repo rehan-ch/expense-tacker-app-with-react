@@ -1,18 +1,21 @@
 import React, {useContext, useState} from 'react'
-import {  TransactionContext} from "../context/transactionContext";
+import { TransactionContext } from "../context/transactionContext";
 
 const AddTransaction = () => {
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState(0);
-  const {addTransaction} = useContext(TransactionContext);
-
+  const {transactions, addTransaction} = useContext(TransactionContext);
+  const generateId = ()=>{
+    let lastObject = transactions.at(0);
+    return lastObject ? lastObject.id + 1 : 1
+  }
   const handleTransaction = (event)=>{
     event.preventDefault();
     if (amount === 0){
       alert("Please Enter Some Amount!!");
       return
     }
-    addTransaction({desc: description, amount: amount})
+    addTransaction({id: generateId, desc: description, amount: amount})
     setAmount(0);
     setDescription("");
   }

@@ -1,11 +1,14 @@
 import React from 'react'
 
 const AddTransaction = () => {
+  const handleTransaction = (event)=>{
+    event.preventDefault();
+  }
   return (
     <div>
       <h2>Add New Transaction</h2>
       < hr />
-      <form>
+      <form onSubmit={()=>handleTransaction()}>
         <div className='form-group'>
           <label>
             Text

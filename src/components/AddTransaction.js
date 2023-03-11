@@ -8,11 +8,13 @@ const AddTransaction = () => {
 
   const handleTransaction = (event)=>{
     event.preventDefault();
-    if (amount !== 0){
-      addTransaction({desc: description, amount: amount})
-      setAmount(0);
-      setDescription("");
+    if (amount === 0){
+      alert("Please Enter Some Amount!!");
+      return
     }
+    addTransaction({desc: description, amount: amount})
+    setAmount(0);
+    setDescription("");
   }
   return (
     <div>

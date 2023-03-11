@@ -1,6 +1,8 @@
-import React from 'react'
-
+import React, {useContext} from 'react'
+import { TransactionContext } from '../context/transactionContext'
 const Transaction = ({obj}) => {
+  const {removeTransaction} = useContext(TransactionContext);
+
   return (
     <div>
     <div className='transaction-container'>
@@ -9,7 +11,10 @@ const Transaction = ({obj}) => {
           <h4>$ {obj.amount}</h4>
         </div>
         <div className='m-10 remove-btn-container'>
-          <a href='#' className='remove-btn'>X</a>
+          <a href='#' className='remove-btn' onClick={(e) => {
+            e.preventDefault();
+            removeTransaction(obj.id)}
+            }>X</a>
         </div>
       </div>
     </div>

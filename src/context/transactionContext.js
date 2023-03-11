@@ -7,11 +7,22 @@ export const TransactionContext = createContext(initialTransactions);
 export const TransactionProvider = ({children}) => {
   const [state, dispach] = useReducer(TransactionReducer, initialTransactions);
   const addTransaction = (transObj) => {
+      let lastObject = state.at(0);
+      let id = lastObject ? lastObject.id + 1 : 1
     dispach({
       type: "ADD_Transaction",
       payload: {
+        id: id,
         amount: transObj.amount,
         desc: transObj.desc
+      }
+    })
+  }
+  const removeTransaction = (id) => {
+    dispach({
+      type: "REMOVE_TRANSACTION",
+      payload: {
+        id: id
       }
     })
   }
@@ -30,6 +41,7 @@ export const TransactionProvider = ({children}) => {
       {
         transactions: state,
         addTransaction,
+        removeTransaction,
         income, expense,
         totalIncome
       }
